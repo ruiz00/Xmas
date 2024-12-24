@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Christmas Message</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="message-background">
+    <div class="container">
+        <h2 id="greetingMessage"></h2> <!-- This is where the message will be displayed -->
+        <button id="backButton">Go Back</button>
+    </div>
+    <script>
+        // Function to display the personalized message
+        function displayMessage() {
+            // Retrieve the name from local storage
+            const name = localStorage.getItem('userName'); // Ensure this matches the key used in index.html
+            const greetingMessage = document.getElementById('greetingMessage');
+
+            if (name) {
+                // Create the personalized message with emojis
+                greetingMessage.innerHTML = `
+                    Dear ${name} 🎄,<br><br>
+                    I wanted to take a moment to wish you a Merry Christmas 🎉, filled with joy, love ❤️, and happiness. 
+                    May this magical time be an opportunity to share precious moments with loved ones, create unforgettable memories, and renew your hopes and dreams.<br><br>
+                    May the light and warmth of Christmas illuminate your path, may peace  and serenity fill your heart, and may love and generosity guide your steps.<br><br>
+                    I wish you a new year filled with promises, challenges, and successes. 
+                    May your dearest dreams come true, may your sincerest hopes be fulfilled, and may your life be filled with meaning, purpose, and happiness.<br><br>
+                    Merry Christmas 🎊, and may the new year be kind to you!<br><br>
+                    With all my love and best wishes,<br>
+                    BRYAN
+                `;
+            } else {
+                greetingMessage.innerHTML = "No name found!"; // Fallback message if no name is found
+            }
+        }
+
+        // Call the function to display the message when the page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            displayMessage(); // Call the function to display the message
+        });
+
+        // Go back button functionality
+        document.getElementById('backButton').addEventListener('click', function() {
+            window.location.href = 'index.html'; // Redirect back to the input page
+        });
+    </script>
+</body>
+</html>

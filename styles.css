@@ -1,0 +1,85 @@
+/* General styles for both pages */
+body {
+    color: #fff; /* Change text color for better visibility */
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full height of the viewport */
+    margin: 0; /* Remove default margin */
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent background (30% opacity) */
+    /* Adjust the opacity as needed (0.3 is 30% opaque) */
+}
+
+button {
+    padding: 10px 15px;
+    border: none; /* Remove border */
+    border-radius: 5px; /* Optional: keep rounded corners */
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Styles for index.html */
+.index-background {
+    background-image: url('images/index2.png'); /* Use a high-resolution image */
+    background-size: cover; /* Make the background image cover the entire viewport */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+}
+
+/* Styles for message.html */
+.message-background {
+    background-image: url('images/message.png'); /* Use a high-resolution image */
+    background-size: cover; /* Make the background image cover the entire viewport */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+}
+
+#greetingMessage {
+    color: #fffeff; /* Gold color for the message text */
+    font-style: italic; /* Italicize the text */
+    font-size: 1.5em; /* Increase font size for better visibility */
+    margin: 20px 0; /* Add some margin for spacing */
+    padding: 10px; /* Add some padding for better spacing */
+    border-radius: 10px; /* Rounded corners for the message background */
+}
+@media (max-width: 768px) {
+    body {
+        flex-direction: column; /* Stack elements vertically on smaller screens */
+        height: auto; /* Allow height to adjust */
+    }
+
+    .container {
+        padding: 15px; /* Reduce padding on smaller screens */
+    }
+
+    #greetingMessage {
+        font-size: 1.2em; /* Smaller font size for smaller screens */
+    }
+
+    button {
+        width: 100%; /* Make buttons full width on smaller screens */
+        padding: 12px; /* Increase padding for better touch targets */
+    }
+}
+
+@media (max-width: 480px) {
+    #greetingMessage {
+        font-size: 1em; /* Further reduce font size for very small screens */
+    }
+
+    button {
+        padding: 10px; /* Adjust button padding */
+    }
+}
